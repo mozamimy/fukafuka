@@ -22,9 +22,10 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "sinatra"
-  spec.add_dependency "sinatra-contrib"
   spec.add_dependency "revision_plate"
+  spec.add_dependency "unicorn"
 
+  spec.add_development_dependency "sinatra-contrib"
   spec.add_development_dependency "bundler", "~> 1.14"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
