@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+    environment:
+      TZ: Asia/Tokyo
+      RACK_ENV: production
+      UNICORN_LOG_TO_STDOUT: '1'
+    ports:
+      - '8080:8080'
