@@ -1,3 +1,3 @@
 module Fukafuka
-  VERSION = "0.1.0"
+  VERSION = File.read("#{__dir__}/../../VERSION")
 end
