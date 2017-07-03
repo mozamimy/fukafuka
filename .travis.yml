@@ -2,12 +2,12 @@ sudo: required
 services:
   - docker
 script:
+  - git rev-parse HEAD > REVISION
   - docker build -t mozamimy/fukafuka .
 env:
   REPOSITORY: mozamimy/fukafuka
 after_success:
   - if [ "$TRAVIS_TAG" != "" ]; then
-    git rev-parse HEAD > REVISION &&
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" &&
     docker tag $REPOSITORY $REPOSITORY:`cat VERSION` &&
     docker push $REPOSITORY:`cat VERSION` &&
